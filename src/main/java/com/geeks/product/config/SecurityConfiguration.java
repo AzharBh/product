@@ -27,8 +27,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource dataSource;
 
-
-
 	@Autowired
 	private JWTService jwtTokenService;
 
@@ -37,8 +35,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Value(Parameters.KEY_SECURITY_OPEN_API_PATTERN)
 	String openApiPattern;
-
-
 
 	@Value(Parameters.KEY_SECURITY_SECURE_API_PATTERN)
 	String secureApiPattern;
@@ -59,19 +55,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 						UsernamePasswordAuthenticationFilter.class);
 	}
 
-	/*@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.jdbcAuthentication().dataSource(dataSource)
-				.usersByUsernameQuery("")
-				.authoritiesByUsernameQuery("")
-				.passwordEncoder(passwordEncoder);
-	}*/
 
-	@Bean
-	public CommonsMultipartResolver createMultipartResolver() {
-		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		resolver.setDefaultEncoding("utf-8");
-		return resolver;
-	}
 
 }

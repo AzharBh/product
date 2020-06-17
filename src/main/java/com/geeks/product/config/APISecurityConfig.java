@@ -48,15 +48,7 @@ public class APISecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated();
 	}
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-		return bCryptPasswordEncoder;
-	}
 
-	@Bean
-	public MultipartResolver multipartResolver(){
-		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
-		return commonsMultipartResolver;
-	}
+
+
 }
